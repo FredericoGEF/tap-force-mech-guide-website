@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+	
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="pages.css">
+	<title>About</title>
+</head>
+
+<body>
+	<div id="PT_page" class="showThis" style="width: 100%;">	
+		<div class="top_menu">
+			<div class="mainTM"><a href="index.html?lang=PT">MECH GUIDE TAPFORCE</a></div>
+			<div class="changeLang" style="color: white;">PT/<a onClick="changeLanguage('lang', 'EN')" style="color: #16AF2D; text-decoration: none; cursor: pointer;">EN</a></div>
+			<div class="aboutTM"><a href="about.html?lang=PT">Sobre</a></div>
+		</div>
+		
+		<div style="text-align: center; width: 60%; padding-left: 20%; padding-right: 20%;">
+			<h1 style="font-size: 1.8em;">Sobre</h1>
+			<p style="font-size: 1.2em; line-height: 1.6;">Somos dois jogadores de <strong>Tap Force</strong> – um brasileiro e um português – que decidiram criar este guia para ajudar outros jogadores a entenderem melhor o sistema do evento <strong>Mech</strong>. Vamos te guiar desde os fundamentos básicos até conceitos mais avançados, abordando conhecimentos gerais, composições de times, itens, dragões e recomendações práticas. Nosso objetivo é oferecer um conteúdo útil e informativo para quem se interessar em explorar esse guia.</p>
+			<p style="font-size: 1.2em; line-height: 1.6;">Sabemos que erros podem ocorrer, então contamos com sua compreensão e convidamos você a nos informar sobre qualquer problema ou sugestão de melhoria via Discord.</p>
+			<p style="font-size: 1.2em; line-height: 1.6;">Este guia é uma iniciativa totalmente feita por fãs, sem nenhuma intenção de lucro ou de prejudicar os desenvolvedores ou envolvidos no jogo. É apenas uma demonstração do carinho que temos por um jogo que adoramos.</p>
+		</div>
+		
+		<div style="padding-top: 30px;"></div>
+		
+		<footer>
+			<div style="font-size: 1.5em; padding-top: 20px;">Atenção:</div>
+			<div style="padding-top: 20px;">Este site foi criado exclusivamente com propósitos educativos, sem qualquer intenção lucrativa. Nosso objetivo não é vender ou nos beneficiar das criações dos desenvolvedores do jogo, mas sim oferecer um guia informativo para os jogadores.</div>
+			<hr>
+			<div>Desenvolvido por dois fãs apaixonados pelo jogo, este guia está em fase BETA. Caso encontre algo que precise de ajustes ou tenha dúvidas sobre o conteúdo apresentado, entre em contato pelo Discord com @Johnny ou @TeepoLover. Sua ajuda e feedback são muito bem-vindos !</div>
+			<hr>
+			<div>Todos os direitos sobre o jogo pertencem à RaceCat, sua desenvolvedora. Não temos qualquer vínculo de trabalho ou parceria com a empresa — este é um projeto feito por fãs, para fãs. Esperamos que aproveitem !</div>
+			<hr>
+			<div>© 2025 Race Cat Games. Todos os direitos reservados.</div>
+			<div style="padding-top: 20px;"></div>
+		</footer>		
+	</div>
+	
+	<div id="EN_page" class="hideThis" style="width: 100%;">	
+		<div class="top_menu">
+			<div class="mainTM"><a href="index.html?lang=EN">MECH GUIDE TAPFORCE</a></div>
+			<div class="changeLang" style="color: white;"><a onClick="changeLanguage('lang', 'PT')" style="color: #16AF2D; text-decoration: none; cursor: pointer;">PT</a>/EN</div>
+			<div class="aboutTM"><a href="about.html?lang=EN">About</a></div>
+		</div>
+		
+		<div style="text-align: center; width: 60%; padding-left: 20%; padding-right: 20%;">
+			<h1 style="font-size: 1.8em;">About</h1>
+			<p style="font-size: 1.2em; line-height: 1.6;">We are two <strong>Tap Force</strong> players – one Brazilian and one Portuguese – who decided to create this guide to help others better understand <strong>the Mech</strong> event system. We’ll take you from the basics to more advanced concepts, covering general knowledge, team compositions, items, dragons, and practical recommendations. Our goal is to provide helpful and informative content for anyone interested in exploring this guide.</p>
+			<p style="font-size: 1.2em; line-height: 1.6;">We understand that mistakes might happen, so we kindly ask for your understanding and invite you to report any issues or suggestions to us via Discord.</p>
+			<p style="font-size: 1.2em; line-height: 1.6;">This guide is a completely fan-made initiative with no intention of profit or harm to the game developers or contributors. It’s simply a labor of love for a game we truly enjoy.</p>
+		</div>
+		
+		<div style="padding-top: 30px;"></div>
+		
+		<footer>
+			<div style="font-size: 1.3em; padding-top: 20px;">Attention:</div>
+			<div style="padding-top: 15px;">This site has been created exclusively for educational purposes, with no intention of making a profit. Our aim is not to sell or benefit from the game developers' creations, but to offer an informative guide for players.</div>
+			<hr>
+			<div>Developed by two passionate fans of the game, this guide is in its BETA phase. If you find anything that needs tweaking or have any questions about the content presented, please contact @Johnny or @TeepoLover on Discord. We welcome your help and feedback !</div>
+			<hr>
+			<div>All rights to the game belong to RaceCat, its developer. We have no working relationship or partnership with the company - this is a project made by fans, for fans. We hope you enjoy it !</div>
+			<hr>
+			<div>© 2025 Race Cat Games. All rights reserved.</div>
+			<div style="padding-top: 20px;"></div>
+		</footer>
+	</div>
+	
+	<script>
+		function changeLanguage(key, value) {
+            let n1 = document.querySelector(".showThis"); // Seleciona o elemento com a classe "showThis"
+			let n2 = document.querySelector(".hideThis"); // Seleciona o elemento com a classe "hideThis"
+            if (n1) {
+                n1.classList.replace("showThis", "hideThis"); // Troca "showThis" por "hideThis"
+            }
+			if (n2) {
+                n2.classList.replace("hideThis", "showThis"); // Troca "hideThis" por "showThis"
+            }
+			
+			let url = new URL(window.location);
+            url.searchParams.set(key, value); // Define ou altera o parâmetro
+
+            history.pushState({}, "", url);
+        }
+		
+		const params = new URLSearchParams(window.location.search);
+		const lg = params.get("lang");
+		
+		if (lg === "EN") {
+			changeLanguage('lang', 'EN');
+		}
+	</script>	
+</body>
+	
+</html>
